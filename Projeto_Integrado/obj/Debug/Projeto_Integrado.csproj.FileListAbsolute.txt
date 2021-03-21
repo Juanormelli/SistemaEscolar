@@ -1,0 +1,11 @@
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\bin\Debug\Projeto_Integrado.exe.config
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\bin\Debug\Projeto_Integrado.exe
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\bin\Debug\Projeto_Integrado.pdb
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.csprojAssemblyReference.cache
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.CadastroAluno.resources
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.Login.resources
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.Properties.Resources.resources
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.csproj.GenerateResource.cache
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.csproj.CoreCompileInputs.cache
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.exe
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.pdb
