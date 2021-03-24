@@ -10,29 +10,17 @@ using System.Windows.Forms;
 
 namespace Projeto_Integrado
 {
-    public partial class Login : Form
+    public partial class TrancarMatricula : Form
     {
-        public Login()
+        public TrancarMatricula()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var form = new CadastroAluno();
-            form.Show();
         }
     }
 }
