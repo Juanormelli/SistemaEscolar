@@ -65,6 +65,7 @@
             this.Aluno.Text = "Alunos";
             this.Aluno.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Aluno.UseVisualStyleBackColor = false;
+            this.Aluno.Click += new System.EventHandler(this.Aluno_Click);
             // 
             // label1
             // 

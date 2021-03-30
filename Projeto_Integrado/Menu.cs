@@ -21,5 +21,13 @@ namespace Projeto_Integrado
         {
 
         }
+
+        private void Aluno_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            var form = new MenuAluno();
+            form.Show();
+        }
     }
 }

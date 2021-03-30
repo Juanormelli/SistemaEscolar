@@ -10,25 +10,14 @@ using System.Windows.Forms;
 
 namespace Projeto_Integrado
 {
-    public partial class EditarAluno : Form
+    public partial class VisualizacaoTurmas : Form
     {
-        public EditarAluno()
+        public VisualizacaoTurmas()
         {
             InitializeComponent();
         }
 
-        private void EditarAluno_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox22_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
