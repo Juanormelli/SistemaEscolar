@@ -84,6 +84,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -400,10 +401,22 @@
             resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnVoltar, "btnVoltar");
+            this.btnVoltar.ForeColor = System.Drawing.Color.Red;
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // CadastroAluno
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -525,5 +538,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

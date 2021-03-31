@@ -86,29 +86,30 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 33);
+            this.textBox1.Location = new System.Drawing.Point(32, 66);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(102, 20);
             this.textBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(132, 32);
+            this.button1.Location = new System.Drawing.Point(140, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 21);
             this.button1.TabIndex = 1;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Location = new System.Drawing.Point(29, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 2;
@@ -572,7 +573,7 @@
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(235, 20);
             this.textBox22.TabIndex = 42;
-            this.textBox22.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
+            
             // 
             // label28
             // 
@@ -637,12 +638,29 @@
             this.button3.Text = "Editar";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.Color.Red;
+            this.btnVoltar.Location = new System.Drawing.Point(10, 12);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(70, 23);
+            this.btnVoltar.TabIndex = 97;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // EditarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(874, 833);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -769,5 +787,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

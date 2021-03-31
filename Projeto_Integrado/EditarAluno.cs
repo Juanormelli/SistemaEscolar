@@ -22,15 +22,14 @@ namespace Projeto_Integrado
 
         }
 
-        private void textBox22_TextChanged(object sender, EventArgs e)
+       
+
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
-            
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            this.Close();
+            var MenuAluno = new MenuAluno();
+            MenuAluno.Show();
         }
     }
 }

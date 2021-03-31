@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnAbrirTurma = new System.Windows.Forms.Button();
+            this.btnFecharTurma = new System.Windows.Forms.Button();
+            this.btnCdAluno = new System.Windows.Forms.Button();
+            this.btnVisualizarTurm = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,93 +46,97 @@
             this.label1.Size = new System.Drawing.Size(186, 31);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ações Turma";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button4
+            // btnAbrirTurma
             // 
-            this.button4.BackColor = System.Drawing.Color.LimeGreen;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(62, 99);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(172, 62);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Abrir Turma";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAbrirTurma.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnAbrirTurma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAbrirTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirTurma.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirTurma.ForeColor = System.Drawing.Color.White;
+            this.btnAbrirTurma.Location = new System.Drawing.Point(62, 99);
+            this.btnAbrirTurma.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnAbrirTurma.Name = "btnAbrirTurma";
+            this.btnAbrirTurma.Size = new System.Drawing.Size(172, 62);
+            this.btnAbrirTurma.TabIndex = 2;
+            this.btnAbrirTurma.Text = "Abrir Turma";
+            this.btnAbrirTurma.UseVisualStyleBackColor = false;
+            this.btnAbrirTurma.Click += new System.EventHandler(this.btnAbrirTurma_Click);
             // 
-            // button2
+            // btnFecharTurma
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(62, 167);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 64);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Fechar Turma";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnFecharTurma.BackColor = System.Drawing.Color.Transparent;
+            this.btnFecharTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFecharTurma.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFecharTurma.ForeColor = System.Drawing.Color.Red;
+            this.btnFecharTurma.Location = new System.Drawing.Point(62, 167);
+            this.btnFecharTurma.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnFecharTurma.Name = "btnFecharTurma";
+            this.btnFecharTurma.Size = new System.Drawing.Size(172, 64);
+            this.btnFecharTurma.TabIndex = 5;
+            this.btnFecharTurma.Text = "Fechar Turma";
+            this.btnFecharTurma.UseVisualStyleBackColor = false;
+            this.btnFecharTurma.Click += new System.EventHandler(this.btnFecharTurma_Click);
             // 
-            // button1
+            // btnCdAluno
             // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(277, 99);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 62);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Cadastrar Aluno";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCdAluno.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCdAluno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCdAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCdAluno.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCdAluno.ForeColor = System.Drawing.Color.White;
+            this.btnCdAluno.Location = new System.Drawing.Point(277, 99);
+            this.btnCdAluno.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCdAluno.Name = "btnCdAluno";
+            this.btnCdAluno.Size = new System.Drawing.Size(172, 62);
+            this.btnCdAluno.TabIndex = 7;
+            this.btnCdAluno.Text = "Cadastrar Aluno";
+            this.btnCdAluno.UseVisualStyleBackColor = false;
+            this.btnCdAluno.Click += new System.EventHandler(this.btnCdAluno_Click);
             // 
-            // button5
+            // btnVisualizarTurm
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.DimGray;
-            this.button5.Location = new System.Drawing.Point(277, 167);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(172, 66);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Visualizar Turmas\r\n";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnVisualizarTurm.BackColor = System.Drawing.Color.Transparent;
+            this.btnVisualizarTurm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnVisualizarTurm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVisualizarTurm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarTurm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarTurm.ForeColor = System.Drawing.Color.DimGray;
+            this.btnVisualizarTurm.Location = new System.Drawing.Point(277, 167);
+            this.btnVisualizarTurm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnVisualizarTurm.Name = "btnVisualizarTurm";
+            this.btnVisualizarTurm.Size = new System.Drawing.Size(172, 66);
+            this.btnVisualizarTurm.TabIndex = 9;
+            this.btnVisualizarTurm.Text = "Visualizar Turmas\r\n";
+            this.btnVisualizarTurm.UseVisualStyleBackColor = false;
+            this.btnVisualizarTurm.Click += new System.EventHandler(this.btnVisualizarTurm_Click);
             // 
-            // button6
+            // btnVoltar
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Red;
-            this.button6.Location = new System.Drawing.Point(11, 12);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(70, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Voltar";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.Color.Red;
+            this.btnVoltar.Location = new System.Drawing.Point(11, 12);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(70, 23);
+            this.btnVoltar.TabIndex = 10;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // MenuTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 364);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(486, 268);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnVisualizarTurm);
+            this.Controls.Add(this.btnCdAluno);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAbrirTurma);
+            this.Controls.Add(this.btnFecharTurma);
             this.Name = "MenuTurmas";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -143,10 +147,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnAbrirTurma;
+        private System.Windows.Forms.Button btnFecharTurma;
+        private System.Windows.Forms.Button btnCdAluno;
+        private System.Windows.Forms.Button btnVisualizarTurm;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

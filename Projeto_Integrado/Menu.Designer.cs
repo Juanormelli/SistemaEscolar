@@ -49,6 +49,7 @@
             this.turmas.Text = "Turmas";
             this.turmas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.turmas.UseVisualStyleBackColor = false;
+            this.turmas.Click += new System.EventHandler(this.turmas_Click);
             // 
             // Aluno
             // 

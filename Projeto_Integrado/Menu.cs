@@ -26,8 +26,17 @@ namespace Projeto_Integrado
         {
             this.Hide();
             this.Close();
-            var form = new MenuAluno();
-            form.Show();
+            var MenuAluno = new MenuAluno();
+            MenuAluno.Show();
+        }
+
+        private void turmas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            var MenuTurmas = new MenuTurmas();
+            MenuTurmas.Show();
+
         }
     }
 }

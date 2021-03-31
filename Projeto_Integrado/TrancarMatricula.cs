@@ -18,9 +18,13 @@ namespace Projeto_Integrado
         }
 
 
-        private void label1_Click(object sender, EventArgs e)
+     
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            this.Close();
+            var MenuAluno = new MenuAluno();
+            MenuAluno.Show();
         }
     }
 }

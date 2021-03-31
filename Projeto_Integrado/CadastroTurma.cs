@@ -21,5 +21,13 @@ namespace Projeto_Integrado
         {
 
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            var MenuTurma = new MenuTurmas();
+            MenuTurma.Show();
+        }
     }
 }

@@ -16,30 +16,45 @@ namespace Projeto_Integrado
         {
             InitializeComponent();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        public void MostrarForm(Form nome) 
         {
+            this.Hide();
+            Close();
+            nome.Show();
 
         }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void btnMatricular_Click(object sender, EventArgs e)
         {
-
+            var CadastrarAluno = new CadastroAluno();
+            MostrarForm(CadastrarAluno);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
+        private void btnAlterarDados_Click(object sender, EventArgs e)
+        {
+            var EditarDados = new EditarAluno();
+            MostrarForm(EditarDados);
+        }
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            var VisualizarDados = new VisualizacaodeDados();
+            MostrarForm(VisualizarDados);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnTrncMatr_Click(object sender, EventArgs e)
         {
-
+            var TrancarMatricula = new TrancarMatricula();
+            MostrarForm(TrancarMatricula);
+        }
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            var Voltar = new Menu();
+            MostrarForm(Voltar);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
+       
+
+        
     }
 }

@@ -16,5 +16,18 @@ namespace Projeto_Integrado
         {
             InitializeComponent();
         }
+
+        private void AdicionarAlunos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            var MenuTurma = new MenuTurmas();
+            MenuTurma.Show();
+        }
     }
 }
