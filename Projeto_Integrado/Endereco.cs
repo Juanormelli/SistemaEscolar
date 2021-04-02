@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Projeto_Integrado
 {
@@ -12,7 +13,17 @@ namespace Projeto_Integrado
         public int Numero { get; set; }
         public string Cidade { get; set; }
         public string Bairro { get; set; }
-        public char Estado { get; set; }
+        public string Estado { get; set; }
 
+
+
+
+        public void Cadastrar_Endereco(Endereco endereco)
+        {
+            var con = new Conexao();
+            con.Cadastrar_Endereco(endereco);
+
+            
+        }
     }
 }
