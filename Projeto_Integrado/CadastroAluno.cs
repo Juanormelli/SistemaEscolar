@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 
@@ -14,25 +15,34 @@ namespace Projeto_Integrado
 {
     public partial class CadastroAluno : Form
     {
-        public void CheckEmptyTxtBox(Control.ControlCollection ctrl)
+        public bool CheckEmptyTxtBox(Control.ControlCollection ctrl)
         {
-            foreach (Control ctr2 in ctrl) {
+            bool check = true;
+            foreach (Control ctr2 in ctrl)
+            {
                 if (ctr2 is TextBoxBase)
                 {
                     if (!string.IsNullOrEmpty(ctr2.Text))
-                        continue;
+                    {
+                        check = true;
+                        
+
+                    }
                     else
                     {
+                        check = false;
                         MessageBox.Show("Nenhum Valor Pode ser Vazio ");
                         break;
                     }
                 }
-              
+
             }
+            return check;
         }
+
         public void ClearTxtBoxes(Control.ControlCollection ctrl)
         {
-            foreach(Control ctr2 in ctrl)
+            foreach (Control ctr2 in ctrl)
             {
                 if (ctr2 is TextBoxBase)
                 {
@@ -73,49 +83,56 @@ namespace Projeto_Integrado
 
         private void btnMatricular_Click(object sender, EventArgs e)
         {
-            var aluno = new Aluno();
-            aluno.A_Endereco = new Endereco();
-            aluno.A_Responsavel = new Responsavel();
-            aluno.Nome = txtNome.Text;
-            aluno.Cpf = txtCpf.Text;
-            aluno.Rg = txtRg.Text;
-            aluno.Dt_Nascimento = dtNascimento.Value;
-            aluno.Telefone = 1144;
-            aluno.A_Endereco.Rua = txtRua.Text;
-            aluno.A_Endereco.Numero = 44;
-            aluno.A_Endereco.Bairro = txtBairro.Text;
-            aluno.A_Endereco.Cidade = txtCidade.Text;
-            aluno.A_Endereco.Estado = cbEstado.Text;
-            aluno.A_Responsavel.Nome_Pai = txtNomePai.Text;
-            aluno.A_Responsavel.Nome_Mae = txtNomeMae.Text;
-            aluno.A_Responsavel.Telefone_Pai = 0;
-            aluno.A_Responsavel.Telefone_Mae = 0;
-            aluno.A_Responsavel.Email_Pai = txtEmailPai.Text;
-            aluno.A_Responsavel.Email_Mae = txtEmailMae.Text;
-            aluno.A_Responsavel.Cpf_Pai = txtCpfPai.Text;
-            aluno.A_Responsavel.Cpf_Mae = txtCpfMae.Text;
-            aluno.Principal_responsavel = "p";
-            CheckEmptyTxtBox(this.Controls);
-
-            try
+            if (CheckEmptyTxtBox(this.Controls))
             {
-                aluno.A_Endereco.Cadastrar_Endereco(aluno.A_Endereco);
-                aluno.A_Responsavel.Cadastrar_Resp(aluno.A_Responsavel);
-                aluno.Cadastrar_Aluno(aluno);
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult ok = MessageBox.Show("Cadastro Realizado", "Voltando para tela de cadstro", buttons);
-
-
-                if (ok == DialogResult.OK)
-                {
-                    ClearTxtBoxes(this.Controls);
-                }
-
-            }
-            catch
-            {
+                var aluno = new Aluno();
+                aluno.A_Endereco = new Endereco();
+                aluno.A_Responsavel = new Responsavel();
+                aluno.Nome = txtNome.Text;
+                aluno.Cpf = txtCpf.Text.Replace("-", "").Replace(",", "");
                 
+                aluno.Rg = txtRg.Text;
+                aluno.Dt_Nascimento = dtNascimento.Value;
+                aluno.Telefone = long.Parse(celMask.Text.Replace("-", "").Replace(".", "").Replace(" ", ""));
+                aluno.A_Endereco.Rua = txtRua.Text;
+                aluno.A_Endereco.Numero = int.Parse(txtNum.Text);
+                aluno.A_Endereco.Bairro = txtBairro.Text;
+                aluno.A_Endereco.Cidade = txtCidade.Text;
+                aluno.A_Endereco.Estado = cbEstado.Text;
+                aluno.A_Responsavel.Nome_Pai = txtNomePai.Text;
+                aluno.A_Responsavel.Nome_Mae = txtNomeMae.Text;
+                aluno.A_Responsavel.Telefone_Pai = long.Parse(txtTelPai.Text.Replace("-", "").Replace(",", "").Replace(" ", ""));
+                Console.WriteLine(aluno.A_Responsavel.Telefone_Pai);
+                aluno.A_Responsavel.Telefone_Mae = long.Parse(txtTelMae.Text.Replace("-", "").Replace(",", "").Replace(" ", ""));
+                aluno.A_Responsavel.Email_Pai = txtEmailPai.Text;
+                aluno.A_Responsavel.Email_Mae = txtEmailMae.Text;
+                aluno.A_Responsavel.Cpf_Pai = txtCpfPai.Text.Replace("-", "").Replace(",", "");
+                aluno.A_Responsavel.Cpf_Mae = txtCpfMae.Text.Replace("-", "").Replace(",", "");
+                aluno.Principal_responsavel = "p";
+
+
+
+                try
+                {
+                    aluno.A_Endereco.Cadastrar_Endereco(aluno.A_Endereco);
+                    aluno.A_Responsavel.Cadastrar_Resp(aluno.A_Responsavel);
+                    aluno.Cadastrar_Aluno(aluno);
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult ok = MessageBox.Show("Cadastro Realizado", "Voltando para tela de cadstro", buttons);
+
+
+                    if (ok == DialogResult.OK)
+                    {
+                        ClearTxtBoxes(this.Controls);
+                    }
+
+                }
+                catch
+                {
+
+                }
             }
+           
         }
     }
 }

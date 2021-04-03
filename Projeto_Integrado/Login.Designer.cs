@@ -49,7 +49,7 @@
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.PasswordChar = '*';
             this.senhaTxt.Size = new System.Drawing.Size(216, 20);
-            this.senhaTxt.TabIndex = 0;
+            this.senhaTxt.TabIndex = 1;
             // 
             // label1
             // 

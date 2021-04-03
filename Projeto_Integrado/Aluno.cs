@@ -15,7 +15,7 @@ namespace Projeto_Integrado
         public string Cpf { get; set; }
         public string Rg { get; set; }
         public DateTime Dt_Nascimento { get; set; }
-        public int Telefone { get; set; }
+        public long Telefone { get; set; }
         public string Principal_responsavel{ get; set; }
         public Endereco A_Endereco { get; set; }
         public Responsavel A_Responsavel { get; set; }

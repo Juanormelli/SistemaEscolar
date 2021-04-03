@@ -60,7 +60,7 @@ namespace Projeto_Integrado
         }
         public void Cadastrar_Responsaveis(Responsavel responsaveis)
         {
-            string sql = "Insert Into responsaveis values(@,@NomePai,@NomeMae,@TelefonePai,@TelefoneMae,@EmailPai,@EmailMae,@CpfPai,@CpfMae)";
+            string sql = "Insert Into responsaveis values(@,@NomePai,@NomeMae,@EmailPai,@EmailMae,@TelefonePai,@TelefoneMae,@CpfPai,@CpfMae)";
             string verificacao = "Select count(*) from responsaveis where cpf_pai=@CpfPai or cpf_mae=@CpfMae";
 
 

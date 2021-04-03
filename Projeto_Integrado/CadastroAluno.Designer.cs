@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroAluno));
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRg = new System.Windows.Forms.TextBox();
@@ -54,11 +53,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtNomePai = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtTelPai = new System.Windows.Forms.TextBox();
             this.txtEmailPai = new System.Windows.Forms.TextBox();
             this.txtNomeMae = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtTelMae = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtEmailMae = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -70,13 +67,16 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
-            this.txtCpfPai = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.txtCpfMae = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.celMask = new System.Windows.Forms.MaskedTextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelMae = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelPai = new System.Windows.Forms.MaskedTextBox();
+            this.txtCpfMae = new System.Windows.Forms.MaskedTextBox();
+            this.txtCpfPai = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtNome
@@ -84,11 +84,6 @@
             this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
             resources.ApplyResources(this.txtNome, "txtNome");
             this.txtNome.Name = "txtNome";
-            // 
-            // txtCpf
-            // 
-            resources.ApplyResources(this.txtCpf, "txtCpf");
-            this.txtCpf.Name = "txtCpf";
             // 
             // label1
             // 
@@ -151,7 +146,7 @@
             this.dtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             resources.ApplyResources(this.dtNascimento, "dtNascimento");
             this.dtNascimento.Name = "dtNascimento";
-            this.dtNascimento.Value = new System.DateTime(2021, 3, 20, 22, 24, 59, 0);
+            this.dtNascimento.Value = new System.DateTime(2021, 3, 20, 0, 0, 0, 0);
             // 
             // label8
             // 
@@ -239,11 +234,6 @@
             resources.ApplyResources(this.label20, "label20");
             this.label20.Name = "label20";
             // 
-            // txtTelPai
-            // 
-            resources.ApplyResources(this.txtTelPai, "txtTelPai");
-            this.txtTelPai.Name = "txtTelPai";
-            // 
             // txtEmailPai
             // 
             resources.ApplyResources(this.txtEmailPai, "txtEmailPai");
@@ -258,11 +248,6 @@
             // 
             resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            // 
-            // txtTelMae
-            // 
-            resources.ApplyResources(this.txtTelMae, "txtTelMae");
-            this.txtTelMae.Name = "txtTelMae";
             // 
             // label17
             // 
@@ -330,20 +315,10 @@
             resources.ApplyResources(this.label28, "label28");
             this.label28.Name = "label28";
             // 
-            // txtCpfPai
-            // 
-            resources.ApplyResources(this.txtCpfPai, "txtCpfPai");
-            this.txtCpfPai.Name = "txtCpfPai";
-            // 
             // label29
             // 
             resources.ApplyResources(this.label29, "label29");
             this.label29.Name = "label29";
-            // 
-            // txtCpfMae
-            // 
-            resources.ApplyResources(this.txtCpfMae, "txtCpfMae");
-            this.txtCpfMae.Name = "txtCpfMae";
             // 
             // label10
             // 
@@ -366,18 +341,46 @@
             resources.ApplyResources(this.celMask, "celMask");
             this.celMask.Name = "celMask";
             // 
+            // txtCpf
+            // 
+            resources.ApplyResources(this.txtCpf, "txtCpf");
+            this.txtCpf.Name = "txtCpf";
+            // 
+            // txtTelMae
+            // 
+            resources.ApplyResources(this.txtTelMae, "txtTelMae");
+            this.txtTelMae.Name = "txtTelMae";
+            // 
+            // txtTelPai
+            // 
+            resources.ApplyResources(this.txtTelPai, "txtTelPai");
+            this.txtTelPai.Name = "txtTelPai";
+            // 
+            // txtCpfMae
+            // 
+            resources.ApplyResources(this.txtCpfMae, "txtCpfMae");
+            this.txtCpfMae.Name = "txtCpfMae";
+            // 
+            // txtCpfPai
+            // 
+            resources.ApplyResources(this.txtCpfPai, "txtCpfPai");
+            this.txtCpfPai.Name = "txtCpfPai";
+            // 
             // CadastroAluno
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtCpfPai);
+            this.Controls.Add(this.txtCpfMae);
+            this.Controls.Add(this.txtTelPai);
+            this.Controls.Add(this.txtTelMae);
+            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.celMask);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtNum);
             this.Controls.Add(this.label29);
-            this.Controls.Add(this.txtCpfMae);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.txtCpfPai);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.ckAmbos);
@@ -390,8 +393,6 @@
             this.Controls.Add(this.txtEmailPai);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.txtTelMae);
-            this.Controls.Add(this.txtTelPai);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label18);
@@ -417,7 +418,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRg);
-            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtNome);
             this.KeyPreview = true;
             this.Name = "CadastroAluno";
@@ -431,7 +431,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRg;
@@ -455,11 +454,9 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtNomePai;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtTelPai;
         private System.Windows.Forms.TextBox txtEmailPai;
         private System.Windows.Forms.TextBox txtNomeMae;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtTelMae;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtEmailMae;
         private System.Windows.Forms.Label label27;
@@ -471,12 +468,15 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtCpfPai;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox txtCpfMae;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox txtNum;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.MaskedTextBox celMask;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.MaskedTextBox txtTelMae;
+        private System.Windows.Forms.MaskedTextBox txtTelPai;
+        private System.Windows.Forms.MaskedTextBox txtCpfMae;
+        private System.Windows.Forms.MaskedTextBox txtCpfPai;
     }
 }

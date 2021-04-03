@@ -11,8 +11,8 @@ namespace Projeto_Integrado
     {
         public string Nome_Pai{ get; set; }
         public string Nome_Mae { get; set; }
-        public int Telefone_Pai {get; set; }
-        public int Telefone_Mae { get; set; }
+        public long Telefone_Pai {get; set; }
+        public long Telefone_Mae { get; set; }
         public string Email_Pai { get; set; }
         public string Email_Mae { get; set; }
 
