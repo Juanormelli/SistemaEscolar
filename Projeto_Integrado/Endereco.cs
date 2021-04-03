@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Projeto_Integrado
 {
-    class Endereco
+    class Endereco:Conexao
     {
         public string Rua { get; set; }
         public int Numero { get; set; }
@@ -20,10 +20,19 @@ namespace Projeto_Integrado
 
         public void Cadastrar_Endereco(Endereco endereco)
         {
-            var con = new Conexao();
-            con.Cadastrar_Endereco(endereco);
+            string sql = "Insert Into endereco values(@,@Rua,@Numero,@Bairro,@Cidade,@Estado)";
+            con = new MySqlConnection(conexao);
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@Rua", endereco.Rua);
+            cmd.Parameters.AddWithValue("@Numero", endereco.Numero);
+            cmd.Parameters.AddWithValue("@Bairro", endereco.Bairro);
+            cmd.Parameters.AddWithValue("@Cidade", endereco.Cidade);
+            cmd.Parameters.AddWithValue("@Estado", endereco.Estado);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
 
-            
+
         }
     }
 }

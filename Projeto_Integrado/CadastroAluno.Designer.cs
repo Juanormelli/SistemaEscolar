@@ -143,10 +143,10 @@
             // 
             // dtNascimento
             // 
-            this.dtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             resources.ApplyResources(this.dtNascimento, "dtNascimento");
+            this.dtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNascimento.Name = "dtNascimento";
-            this.dtNascimento.Value = new System.DateTime(2021, 3, 20, 0, 0, 0, 0);
+            this.dtNascimento.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // label8
             // 

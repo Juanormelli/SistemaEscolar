@@ -90,7 +90,7 @@ namespace Projeto_Integrado
                 aluno.A_Responsavel = new Responsavel();
                 aluno.Nome = txtNome.Text;
                 aluno.Cpf = txtCpf.Text.Replace("-", "").Replace(",", "");
-                
+                aluno.Email = txtEmail.Text;
                 aluno.Rg = txtRg.Text;
                 aluno.Dt_Nascimento = dtNascimento.Value;
                 aluno.Telefone = long.Parse(celMask.Text.Replace("-", "").Replace(".", "").Replace(" ", ""));
@@ -102,23 +102,36 @@ namespace Projeto_Integrado
                 aluno.A_Responsavel.Nome_Pai = txtNomePai.Text;
                 aluno.A_Responsavel.Nome_Mae = txtNomeMae.Text;
                 aluno.A_Responsavel.Telefone_Pai = long.Parse(txtTelPai.Text.Replace("-", "").Replace(",", "").Replace(" ", ""));
-                Console.WriteLine(aluno.A_Responsavel.Telefone_Pai);
+              
                 aluno.A_Responsavel.Telefone_Mae = long.Parse(txtTelMae.Text.Replace("-", "").Replace(",", "").Replace(" ", ""));
                 aluno.A_Responsavel.Email_Pai = txtEmailPai.Text;
                 aluno.A_Responsavel.Email_Mae = txtEmailMae.Text;
                 aluno.A_Responsavel.Cpf_Pai = txtCpfPai.Text.Replace("-", "").Replace(",", "");
                 aluno.A_Responsavel.Cpf_Mae = txtCpfMae.Text.Replace("-", "").Replace(",", "");
-                aluno.Principal_responsavel = "p";
-
-
+                if (ckMae.Checked)
+                {
+                    aluno.Principal_responsavel = "M";
+                }
+                else if (ckPai.Checked)
+                {
+                    aluno.Principal_responsavel = "P";
+                }
+                else if (ckAmbos.Checked)
+                {
+                    aluno.Principal_responsavel = "A";
+                }
+                else
+                {
+                    MessageBox.Show("Voce Precisa selecionar um Responsavel principal");
+                }
 
                 try
                 {
                     aluno.A_Endereco.Cadastrar_Endereco(aluno.A_Endereco);
-                    aluno.A_Responsavel.Cadastrar_Resp(aluno.A_Responsavel);
+                    aluno.A_Responsavel.Cadastrar_Responsaveis(aluno.A_Responsavel);
                     aluno.Cadastrar_Aluno(aluno);
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult ok = MessageBox.Show("Cadastro Realizado", "Voltando para tela de cadstro", buttons);
+                    DialogResult ok = MessageBox.Show("Cadastro Realizado", "AVISO", buttons);
 
 
                     if (ok == DialogResult.OK)
