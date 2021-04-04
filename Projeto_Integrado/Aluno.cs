@@ -86,7 +86,7 @@ namespace Projeto_Integrado
             if (codEndereco != -1 && codEndereco != 0 && codPais != -1 && codPais != 0)
             {
                 var teste = cmdCadastrarAluno.ExecuteNonQuery();
-                if (teste == 0)
+                if (teste == -1)
                 {
                     Console.WriteLine(teste);
                     MySqlCommand cmdDeleteEnd = new MySqlCommand(deleteEnd, con);
@@ -149,8 +149,8 @@ namespace Projeto_Integrado
                     Nome_Mae = myreader["nome_mae"].ToString(),
                     Email_Pai = myreader["email_pai"].ToString(),
                     Email_Mae = myreader["email_mae"].ToString(),
-                    Telefone_Pai = Convert.ToInt32(myreader["telefone_pai"]),
-                    Telefone_Mae = Convert.ToInt32(myreader["telefone_mae"]),
+                    Telefone_Pai = Convert.ToInt64(myreader["telefone_pai"]),
+                    Telefone_Mae = Convert.ToInt64(myreader["telefone_mae"]),
                     Cpf_Pai = myreader["cpf_pai"].ToString(),
                     Cpf_Mae = myreader["cpf_mae"].ToString(),
                     CodResponsaveis = Convert.ToInt32(myreader["cod_responsaveis"])
@@ -169,7 +169,7 @@ namespace Projeto_Integrado
         {
             con = new MySqlConnection(conexao);
             con.Open();
-            string queryUpdt = "update aluno set nome=@nome,cpf=@cpf,rg=@rg,dt_nascimento=@dt,telefone=@tel,principal_resonsavel=@pr,email=@email where @id";
+            string queryUpdt = "update aluno set nome=@nome,cpf=@cpf,rg=@rg,dt_nascimento=@dt,telefone=@tel,principal_resonsavel=@pr,email=@email where numero_matricula=@id";
             MySqlCommand cmdUpdateAluno = new MySqlCommand(queryUpdt, con);
             cmdUpdateAluno.Parameters.AddWithValue("@id", id);
             cmdUpdateAluno.Parameters.AddWithValue("@nome", aluno.Nome);

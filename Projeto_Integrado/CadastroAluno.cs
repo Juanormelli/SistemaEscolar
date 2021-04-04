@@ -104,9 +104,9 @@ namespace Projeto_Integrado
                     }
 
                 }
-                catch
+                catch(Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
            

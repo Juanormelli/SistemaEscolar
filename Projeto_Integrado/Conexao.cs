@@ -15,7 +15,7 @@ namespace Projeto_Integrado
 
         public Conexao()
         {
-            conexao = "server=localhost; user id=root;password=password1;database=gestao_escolar";
+            conexao = "server=localhost; user id=root;password=;database=gestaoescolar";
         }
 
         public bool autenticacaousuario(string usuario, string senha)
