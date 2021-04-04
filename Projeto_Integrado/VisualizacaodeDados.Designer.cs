@@ -43,6 +43,7 @@
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.dtNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -63,10 +64,10 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(33, 249);
+            this.txtEmail.Location = new System.Drawing.Point(30, 249);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(197, 20);
+            this.txtEmail.Size = new System.Drawing.Size(200, 20);
             this.txtEmail.TabIndex = 3;
             // 
             // label2
@@ -159,11 +160,11 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(30, 194);
+            this.txtCpf.Location = new System.Drawing.Point(33, 194);
             this.txtCpf.Mask = "000.000.000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.ReadOnly = true;
-            this.txtCpf.Size = new System.Drawing.Size(200, 20);
+            this.txtCpf.Size = new System.Drawing.Size(197, 20);
             this.txtCpf.TabIndex = 5;
             // 
             // txtTel
@@ -185,12 +186,22 @@
             this.dtNascimento.TabIndex = 8;
             this.dtNascimento.ValidatingType = typeof(System.DateTime);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(276, 233);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 13);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "Data de nascimento";
+            // 
             // VisualizacaodeDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(492, 317);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dtNascimento);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.txtCpf);
@@ -230,5 +241,6 @@
         private System.Windows.Forms.MaskedTextBox txtCpf;
         private System.Windows.Forms.MaskedTextBox txtTel;
         private System.Windows.Forms.MaskedTextBox dtNascimento;
+        private System.Windows.Forms.Label label7;
     }
 }

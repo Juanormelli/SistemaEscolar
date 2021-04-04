@@ -14,6 +14,7 @@ namespace Projeto_Integrado
         public string Cidade { get; set; }
         public string Bairro { get; set; }
         public string Estado { get; set; }
+        public int CodEndereco { get; set; }
 
 
 
@@ -32,6 +33,22 @@ namespace Projeto_Integrado
             cmd.ExecuteNonQuery();
             con.Close();
 
+
+        }
+        public void UpdateEndereco(int id, Endereco endereco)
+        {
+            string enderecoUpdate = "update endereco set rua=@Rua,numero=@Numero,bairro=@Bairro,cidade=@Cidade,estado=@Estado where cod_endereco=@id";
+            con = new MySqlConnection(conexao);
+            MySqlCommand cmdUpdateEndereco = new MySqlCommand(enderecoUpdate, con);
+            cmdUpdateEndereco.Parameters.AddWithValue("@id", id);
+            cmdUpdateEndereco.Parameters.AddWithValue("@Rua", endereco.Rua);
+            cmdUpdateEndereco.Parameters.AddWithValue("@Numero", endereco.Numero);
+            cmdUpdateEndereco.Parameters.AddWithValue("@Bairro", endereco.Bairro);
+            cmdUpdateEndereco.Parameters.AddWithValue("@Cidade", endereco.Cidade);
+            cmdUpdateEndereco.Parameters.AddWithValue("@Estado", endereco.Estado);
+            con.Open();
+            cmdUpdateEndereco.ExecuteNonQuery();
+            con.Close();
 
         }
     }

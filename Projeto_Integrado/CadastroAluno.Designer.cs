@@ -276,6 +276,7 @@
             resources.ApplyResources(this.btnLimpar, "btnLimpar");
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // ckMae
             // 

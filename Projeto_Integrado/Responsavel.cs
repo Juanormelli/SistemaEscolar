@@ -19,6 +19,7 @@ namespace Projeto_Integrado
 
         public string Cpf_Pai { get; set; }
         public string Cpf_Mae { get; set; }
+        public int CodResponsaveis { get; set; }
 
         public void Cadastrar_Responsaveis(Responsavel responsaveis)
         {
@@ -53,6 +54,26 @@ namespace Projeto_Integrado
                 throw new Exception("Os pais ja estao cadastrados");
             }
 
+            con.Close();
+        }
+        public void UpdateResponsaveis(int id, Responsavel responsaveis)
+        {
+            string updateResponsaveis = "Update responsaveis set nome_pai=@NomePai,nome_mae=@NomeMae,email_pai=@EmailPai,email_mae=@EmailMae,telefone_pai=@TelefonePai,telefone_mae=@TelefoneMae,cpf_pai=@CpfPai,cpf_mae=@CpfMae where cod_responsaveis=@id";
+
+
+            con = new MySqlConnection(conexao);
+            MySqlCommand cmdUpdate = new MySqlCommand(updateResponsaveis, con);
+            cmdUpdate.Parameters.AddWithValue("@id", id);
+            cmdUpdate.Parameters.AddWithValue("@NomePai", responsaveis.Nome_Pai);
+            cmdUpdate.Parameters.AddWithValue("@NomeMae", responsaveis.Nome_Mae);
+            cmdUpdate.Parameters.AddWithValue("@TelefonePai", responsaveis.Telefone_Pai);
+            cmdUpdate.Parameters.AddWithValue("@TelefoneMae", responsaveis.Telefone_Mae);
+            cmdUpdate.Parameters.AddWithValue("@EmailPai", responsaveis.Email_Pai);
+            cmdUpdate.Parameters.AddWithValue("@EmailMae", responsaveis.Email_Mae);
+            cmdUpdate.Parameters.AddWithValue("@CpfPai", responsaveis.Cpf_Pai);
+            cmdUpdate.Parameters.AddWithValue("@CpfMae", responsaveis.Cpf_Mae);
+            con.Open();
+            cmdUpdate.ExecuteNonQuery();
             con.Close();
         }
 

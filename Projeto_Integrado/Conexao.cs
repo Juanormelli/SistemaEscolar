@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Projeto_Integrado
@@ -42,7 +43,7 @@ namespace Projeto_Integrado
 
         }
 
-        public void SelectById(string nametable, string nameid, int id,List<Aluno>select)
+        public void SelectById(string nametable, string nameid, int id,List<Aluno>selectAluno)
         {
             string Select = "Select * from " + nametable + " where " + nameid + "=@id";
             con = new MySqlConnection(conexao);
@@ -53,21 +54,63 @@ namespace Projeto_Integrado
             con.Open();
             MySqlDataReader myreader;
             myreader = cmdSelect.ExecuteReader();
+            
             while (myreader.Read())
             {
-                select.Add(new Aluno()
+                selectAluno.Add(new Aluno()
                 {
                     Nome = myreader["nome"].ToString(),
                     Cpf = myreader["cpf"].ToString(),
                     Email = myreader["email"].ToString(),
                     Dt_Nascimento = Convert.ToDateTime(myreader["dt_nascimento"]),
                     Telefone = Convert.ToInt64(myreader["telefone"]),
+                    
+                   
 
-                });
+                }) ;
                
             }
         }
+        public void ClearTxtBoxes(Control.ControlCollection ctrl)
+        {
+            foreach (Control ctr2 in ctrl)
+            {
+                if (ctr2 is TextBoxBase || ctr2 is DateTimePicker || ctr2 is ComboBox )
+                {
+                    ctr2.Text = "";
+                    
+                }
+                else
+                {
+                    ClearTxtBoxes(ctr2.Controls);
+                }
+            }
 
+        }
+        public bool CheckEmptyTxtBox(Control.ControlCollection ctrl)
+        {
+            bool check = true;
+            foreach (Control ctr2 in ctrl)
+            {
+                if (ctr2 is TextBoxBase)
+                {
+                    if (!string.IsNullOrEmpty(ctr2.Text))
+                    {
+                        check = true;
+
+
+                    }
+                    else
+                    {
+                        check = false;
+                        MessageBox.Show("Nenhum Valor Pode ser Vazio ");
+                        break;
+                    }
+                }
+
+            }
+            return check;
+        }
 
 
     }
