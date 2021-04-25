@@ -54,6 +54,30 @@
       <DependentUpon>AdicionarAlunos.cs</DependentUpon>
     </Compile>
     <Compile Include="Aluno.cs" />
+    <Compile Include="AtribuirAtividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtribuirAtividades.Designer.cs">
+      <DependentUpon>AtribuirAtividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtribuirNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtribuirNotas.Designer.cs">
+      <DependentUpon>AtribuirNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtribuirPresenca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtribuirPresenca.Designer.cs">
+      <DependentUpon>AtribuirPresenca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boletim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boletim.Designer.cs">
+      <DependentUpon>Boletim.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +103,12 @@
     </Compile>
     <Compile Include="FecharTurma.Designer.cs">
       <DependentUpon>FecharTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GradeHoraria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GradeHoraria.Designer.cs">
+      <DependentUpon>GradeHoraria.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuTurmas.cs">
       <SubType>Form</SubType>
@@ -128,6 +158,18 @@
     <EmbeddedResource Include="AdicionarAlunos.resx">
       <DependentUpon>AdicionarAlunos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AtribuirAtividades.resx">
+      <DependentUpon>AtribuirAtividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtribuirNotas.resx">
+      <DependentUpon>AtribuirNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtribuirPresenca.resx">
+      <DependentUpon>AtribuirPresenca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boletim.resx">
+      <DependentUpon>Boletim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroAluno.resx">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FecharTurma.resx">
       <DependentUpon>FecharTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GradeHoraria.resx">
+      <DependentUpon>GradeHoraria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuTurmas.resx">
       <DependentUpon>MenuTurmas.cs</DependentUpon>
