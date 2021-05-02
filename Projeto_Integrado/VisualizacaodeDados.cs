@@ -28,21 +28,7 @@ namespace Projeto_Integrado
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno();
-            string tabela = "aluno";
-            string nameId = "numero_matricula";
-            List<Aluno> alunos = new List<Aluno>();
-
-
-            aluno.SelectById(tabela, nameId, int.Parse(txtMatricula.Text), alunos);
-            foreach (Aluno aluno1 in alunos)
-            {
-                txtNome.Text = aluno1.Nome;
-                txtCpf.Text = aluno1.Cpf;
-                txtEmail.Text = aluno1.Email;
-                txtTel.Text = aluno1.Telefone.ToString();
-                dtNascimento.Text = aluno1.Dt_Nascimento.ToString();
-            }
+           
         }
     }
 }

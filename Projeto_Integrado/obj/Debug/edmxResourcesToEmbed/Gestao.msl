@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gestaoescolarModelStoreContainer" CdmEntityContainer="gestaoescolarEntities">
+    <EntitySetMapping Name="aluno">
+      <EntityTypeMapping TypeName="gestaoescolarModel.aluno">
+        <MappingFragment StoreEntitySet="aluno">
+          <ScalarProperty Name="numero_matricula" ColumnName="numero_matricula" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="rg" ColumnName="rg" />
+          <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="situacao_matricula" ColumnName="situacao_matricula" />
+          <ScalarProperty Name="cd_turma" ColumnName="cd_turma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="professor">
+      <EntityTypeMapping TypeName="gestaoescolarModel.professor">
+        <MappingFragment StoreEntitySet="professor">
+          <ScalarProperty Name="cod_reg" ColumnName="cod_reg" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="cd_turma" ColumnName="cd_turma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="responsaveis">
+      <EntityTypeMapping TypeName="gestaoescolarModel.responsaveis">
+        <MappingFragment StoreEntitySet="responsaveis">
+          <ScalarProperty Name="cod_responsavel" ColumnName="cod_responsavel" />
+          <ScalarProperty Name="nome_resposavel" ColumnName="nome_resposavel" />
+          <ScalarProperty Name="email_responsavel" ColumnName="email_responsavel" />
+          <ScalarProperty Name="telefone_responsavel" ColumnName="telefone_responsavel" />
+          <ScalarProperty Name="cpf_resposnavel" ColumnName="cpf_resposnavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="turma">
+      <EntityTypeMapping TypeName="gestaoescolarModel.turma">
+        <MappingFragment StoreEntitySet="turma">
+          <ScalarProperty Name="cd_turma" ColumnName="cd_turma" />
+          <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+          <ScalarProperty Name="sala" ColumnName="sala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="gestaoescolarModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="responalunos" TypeName="gestaoescolarModel.responalunos" StoreEntitySet="responalunos">
+      <EndProperty Name="responsaveis">
+        <ScalarProperty Name="cod_responsavel" ColumnName="cod_responsavel" />
+      </EndProperty>
+      <EndProperty Name="aluno">
+        <ScalarProperty Name="numero_matricula" ColumnName="numero_matricula" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

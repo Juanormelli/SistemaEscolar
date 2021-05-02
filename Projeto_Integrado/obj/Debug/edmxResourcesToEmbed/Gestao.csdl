@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gestaoescolarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="aluno">
+    <Key>
+      <PropertyRef Name="numero_matricula" />
+    </Key>
+    <Property Name="numero_matricula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cpf" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rg" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dt_nascimento" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="situacao_matricula" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cd_turma" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="turma" Relationship="Self.aluno_ibfk_1" FromRole="aluno" ToRole="turma" />
+    <NavigationProperty Name="responsaveis" Relationship="Self.responalunos" FromRole="aluno" ToRole="responsaveis" />
+  </EntityType>
+  <EntityType Name="professor">
+    <Key>
+      <PropertyRef Name="cod_reg" />
+    </Key>
+    <Property Name="cod_reg" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="periodo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cd_turma" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="turma" Relationship="Self.professor_ibfk_1" FromRole="professor" ToRole="turma" />
+  </EntityType>
+  <EntityType Name="responsaveis">
+    <Key>
+      <PropertyRef Name="cod_responsavel" />
+    </Key>
+    <Property Name="cod_responsavel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome_resposavel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email_responsavel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefone_responsavel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cpf_resposnavel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="aluno" Relationship="Self.responalunos" FromRole="responsaveis" ToRole="aluno" />
+  </EntityType>
+  <EntityType Name="turma">
+    <Key>
+      <PropertyRef Name="cd_turma" />
+    </Key>
+    <Property Name="cd_turma" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data_inicio" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sala" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="aluno" Relationship="Self.aluno_ibfk_1" FromRole="turma" ToRole="aluno" />
+    <NavigationProperty Name="professor" Relationship="Self.professor_ibfk_1" FromRole="turma" ToRole="professor" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="usuario1" />
+    </Key>
+    <Property Name="usuario1" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="senha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="aluno_ibfk_1">
+    <End Role="turma" Type="Self.turma" Multiplicity="0..1" />
+    <End Role="aluno" Type="Self.aluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="turma">
+        <PropertyRef Name="cd_turma" />
+      </Principal>
+      <Dependent Role="aluno">
+        <PropertyRef Name="cd_turma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="professor_ibfk_1">
+    <End Role="turma" Type="Self.turma" Multiplicity="0..1" />
+    <End Role="professor" Type="Self.professor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="turma">
+        <PropertyRef Name="cd_turma" />
+      </Principal>
+      <Dependent Role="professor">
+        <PropertyRef Name="cd_turma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="responalunos">
+    <End Role="responsaveis" Type="Self.responsaveis" Multiplicity="*" />
+    <End Role="aluno" Type="Self.aluno" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="gestaoescolarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="aluno" EntityType="Self.aluno" />
+    <EntitySet Name="professor" EntityType="Self.professor" />
+    <EntitySet Name="responsaveis" EntityType="Self.responsaveis" />
+    <EntitySet Name="turma" EntityType="Self.turma" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="aluno_ibfk_1" Association="Self.aluno_ibfk_1">
+      <End Role="turma" EntitySet="turma" />
+      <End Role="aluno" EntitySet="aluno" />
+    </AssociationSet>
+    <AssociationSet Name="professor_ibfk_1" Association="Self.professor_ibfk_1">
+      <End Role="turma" EntitySet="turma" />
+      <End Role="professor" EntitySet="professor" />
+    </AssociationSet>
+    <AssociationSet Name="responalunos" Association="Self.responalunos">
+      <End Role="responsaveis" EntitySet="responsaveis" />
+      <End Role="aluno" EntitySet="aluno" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -31,22 +31,61 @@ namespace Projeto_Integrado
 
         private void entarBtn_Click(object sender, EventArgs e)
         {
-            string usuario = usuarioTxt.Text;
-            string senha = senhaTxt.Text;
 
-            var con = new Conexao();
-            
-            if (con.autenticacaousuario(usuario, senha))
+            using (var context = new gestaoescolarEntities())
             {
-                var form = new Menu();
-                form.Show();
-                Hide();
-            }
-            else
-            {
-                MessageBox.Show("Usuario ou senha incorreta ");
-            }
 
-        }   
+                var user = usuarioTxt.Text;
+                var senha = senhaTxt.Text;
+                IQueryable<usuario> users = context.usuario;
+                users= users.Where(x => x.usuario1 == user);
+                users = users.Where(x => x.senha == senha);
+                var result = users.ToList();
+                
+                if (result.Count != 0)
+                {
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario ou senha invalida");
+
+                }
+
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            using(var context = new gestaoescolarEntities())
+            {
+                var teste = context.usuario.Select(x => x.usuario1);
+                if(teste == null)
+                {
+                    var user = new usuario();
+
+                    user.usuario1 = "admin";
+                    user.senha = "admin";
+
+                    context.usuario.Add(user);
+                    context.SaveChanges();
+                    MessageBox.Show("O usuario é admin e a Senha é Admin !");
+                }
+               else 
+                {
+                    MessageBox.Show("Este não é o primeiro uso Contate o Administrador do sistema!");
+
+                }
+
+
+            }
+           
+
+        }
     }
 }
