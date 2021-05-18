@@ -11,8 +11,7 @@ namespace Projeto_Integrado
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-
+    
     public partial class responsaveis
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -30,30 +29,6 @@ namespace Projeto_Integrado
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<aluno> aluno { get; set; }
 
-        public bool ValidaResponsavel(responsaveis responsaveis)
-        {
-            using (var context = new gestaoescolarEntities())
-            {
-                var valida = context.responsaveis.Where(x => x.cpf_resposnavel == responsaveis.cpf_resposnavel);
 
-                var count = valida.Count();
-                if (count != 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-        }
-        public void CadastrarResponsavel(responsaveis responsaveis)
-        {
-            using (var context = new gestaoescolarEntities())
-            {
-
-                context.responsaveis.Add(responsaveis);
-                context.SaveChanges();
-
-            }
-
-        }
     }
 }

@@ -104,20 +104,21 @@ namespace Projeto_Integrado
                     responsaveis = new List<responsaveis> {mae,pai}
 
                 };
-
-                var validaAluno = aluno.ValidaAluno(aluno);
-                var validaMae = mae.ValidaResponsavel(mae);
-                var validaPai = pai.ValidaResponsavel(pai);
+                FunctionsResp fr = new FunctionsResp();
+                FunctionsAluno fa = new FunctionsAluno();
+                var validaAluno = fa.ValidaAluno(aluno);
+                var validaMae = fr.ValidaResponsavel(mae);
+                var validaPai = fr.ValidaResponsavel(pai);
 
                 if (validaAluno  && validaMae && validaPai)
                 {
                     
                     
-                    aluno.CadastrarAluno(aluno);
+                    fa.CadastrarAluno(aluno);
 
 
 
-                    var matricula = aluno.RetornarMatricula(aluno);
+                    var matricula = fa.RetornarMatricula(aluno);
 
                     
                     MessageBox.Show("Aluno Matriculado ! O Numero de matricula do mesmo é : " + matricula);
@@ -126,7 +127,7 @@ namespace Projeto_Integrado
                 }
                 else
                 {
-                    var matricula = aluno.RetornarMatricula(aluno);
+                    var matricula = fa.RetornarMatricula(aluno);
                     MessageBox.Show("O Aluno já esta matriculado no numero de matricula : "+ matricula);
                     
                 }

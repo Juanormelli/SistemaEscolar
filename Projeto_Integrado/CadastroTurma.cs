@@ -29,5 +29,21 @@ namespace Projeto_Integrado
             var MenuTurma = new MenuTurmas();
             MenuTurma.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var context = new gestaoescolarEntities())
+            {
+                var turma1 = new turma();
+                turma1.cd_turma = cbCdTurma.Text;
+                turma1.data_inicio = dtInicio.Text;
+                turma1.sala = int.Parse(cbSala.Text);
+
+                context.turma.Add(turma1);
+                
+                context.SaveChanges();
+
+            }
+        }
     }
 }

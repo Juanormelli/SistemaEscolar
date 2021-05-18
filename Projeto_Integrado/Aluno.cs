@@ -11,17 +11,16 @@ namespace Projeto_Integrado
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Data;
-
+    
     public partial class aluno
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public aluno()
         {
+            this.nota = new HashSet<nota>();
             this.responsaveis = new HashSet<responsaveis>();
         }
-
+    
         public int numero_matricula { get; set; }
         public string nome { get; set; }
         public string cpf { get; set; }
@@ -36,60 +35,15 @@ namespace Projeto_Integrado
         public string estado { get; set; }
         public string situacao_matricula { get; set; }
         public string cd_turma { get; set; }
-
+    
         public virtual turma turma { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<nota> nota { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<responsaveis> responsaveis { get; set; }
 
 
-        public bool ValidaAluno(aluno aluno)
-        {
-            using (var context = new gestaoescolarEntities())
-            {
-                var valida = context.aluno.Where(x => x.cpf == aluno.cpf);
-
-                var count = valida.Count();
-                if (count != 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-        }
-        public void CadastrarAluno(aluno aluno)
-        {
-            using (var context = new gestaoescolarEntities())
-            {
-                
-                context.aluno.Add(aluno);
-
-                context.SaveChanges();
-
-            }
-
-        }
-        public void CadastrarRespAluno(aluno aluno,responsaveis responsaveis)
-        {
-            using (var context = new gestaoescolarEntities())
-            {
-
-                aluno.responsaveis.Add(responsaveis);
-                context.SaveChanges();
-
-            }
-
-        }
-        public string RetornarMatricula(aluno al)
-        {
-            using (var context = new gestaoescolarEntities())
-            {
-                var alunos = context.aluno.Select(x => new { x.numero_matricula, x.cpf }).Where(x => x.cpf == al.cpf).ToList();
-                
-                var str = alunos[0].numero_matricula.ToString();
-                return str;
-            }
 
 
-        }
     }
 }

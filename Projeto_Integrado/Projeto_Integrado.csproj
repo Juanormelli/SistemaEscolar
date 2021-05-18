@@ -63,8 +63,8 @@
     <Reference Include="mysql.data.entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entities.6.8.3.0\lib\net45\mysql.data.entity.EF6.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data.EntityFramework, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.22\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.24\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -115,7 +115,7 @@
     <Compile Include="AdicionarAlunos.Designer.cs">
       <DependentUpon>AdicionarAlunos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Aluno.cs">
+    <Compile Include="aluno.cs">
       <DependentUpon>Gestao.tt</DependentUpon>
     </Compile>
     <Compile Include="AtribuirAtividades.cs">
@@ -136,6 +136,12 @@
     <Compile Include="AtribuirPresenca.Designer.cs">
       <DependentUpon>AtribuirPresenca.cs</DependentUpon>
     </Compile>
+    <Compile Include="AtualizarDadosProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtualizarDadosProfessor.Designer.cs">
+      <DependentUpon>AtualizarDadosProfessor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Boletim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="CadastroAluno.Designer.cs">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroProfessor.Designer.cs">
+      <DependentUpon>CadastroProfessor.cs</DependentUpon>
     </Compile>
     <Compile Include="CadastroTurma.cs">
       <SubType>Form</SubType>
@@ -167,6 +179,8 @@
       <DependentUpon>FecharTurma.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="FunctionsAluno.cs" />
+    <Compile Include="FunctionsResp.cs" />
     <Compile Include="Gestao.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +201,12 @@
     </Compile>
     <Compile Include="GradeHoraria.Designer.cs">
       <DependentUpon>GradeHoraria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuProfessor.Designer.cs">
+      <DependentUpon>MenuProfessor.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuTurmas.cs">
       <SubType>Form</SubType>
@@ -211,6 +231,9 @@
     </Compile>
     <Compile Include="MenuAluno.Designer.cs">
       <DependentUpon>MenuAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nota.cs">
+      <DependentUpon>Gestao.tt</DependentUpon>
     </Compile>
     <Compile Include="professor.cs">
       <DependentUpon>Gestao.tt</DependentUpon>
@@ -244,6 +267,12 @@
     <Compile Include="VisualizacaoTurmas.Designer.cs">
       <DependentUpon>VisualizacaoTurmas.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisualizarDadosProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizarDadosProf.Designer.cs">
+      <DependentUpon>VisualizarDadosProf.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdicionarAlunos.resx">
       <DependentUpon>AdicionarAlunos.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,11 +285,17 @@
     <EmbeddedResource Include="AtribuirPresenca.resx">
       <DependentUpon>AtribuirPresenca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AtualizarDadosProfessor.resx">
+      <DependentUpon>AtualizarDadosProfessor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Boletim.resx">
       <DependentUpon>Boletim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroAluno.resx">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroProfessor.resx">
+      <DependentUpon>CadastroProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroTurma.resx">
       <DependentUpon>CadastroTurma.cs</DependentUpon>
@@ -273,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GradeHoraria.resx">
       <DependentUpon>GradeHoraria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuProfessor.resx">
+      <DependentUpon>MenuProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuTurmas.resx">
       <DependentUpon>MenuTurmas.cs</DependentUpon>
@@ -303,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisualizacaoTurmas.resx">
       <DependentUpon>VisualizacaoTurmas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarDadosProf.resx">
+      <DependentUpon>VisualizarDadosProf.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Gestao.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

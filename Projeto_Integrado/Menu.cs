@@ -38,5 +38,14 @@ namespace Projeto_Integrado
             MenuTurmas.Show();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var menu = new MenuProfessor();
+            
+            menu.Show();
+            this.Hide();
+            this.Close();
+        }
     }
 }

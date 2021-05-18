@@ -28,7 +28,34 @@ namespace Projeto_Integrado
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-           
+            var numero_matricula = int.Parse(txtMatricula.Text);
+            var function = new Functions();
+
+            using (var context = new gestaoescolarEntities())
+            {
+                var alunos = context.aluno.Where(x => x.numero_matricula == numero_matricula).ToList();
+                if (alunos.Count != 0)
+                {
+                    txtNome.Text = alunos[0].nome;
+                    txtCpf.Text = alunos[0].cpf;
+                    txtEmail.Text = alunos[0].email;
+                    txtTel.Text = alunos[0].telefone;
+                    txtTurma.Text = alunos[0].cd_turma;
+                    dtNascimento.Text = alunos[0].dt_nascimento;
+                }
+                else
+                {
+                    function.ClearTxtBoxes(this.Controls);
+                    MessageBox.Show("Numero de Matricula Invalido !");
+                }
+               
+            }
+
+
+
+
+
         }
     }
+
 }

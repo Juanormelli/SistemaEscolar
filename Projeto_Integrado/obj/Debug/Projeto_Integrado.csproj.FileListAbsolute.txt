@@ -56,3 +56,7 @@ C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projet
 C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.GradeHoraria.resources
 C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\bin\Debug\MySql.Data.EntityFramework.dll
 C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.CadastroProfessor.resources
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.MenuProfessor.resources
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.AtualizarDadosProfessor.resources
+C:\Users\juan_\source\repos\Projeto_Integrado\Projeto_Integrado\obj\Debug\Projeto_Integrado.VisualizarDadosProf.resources
