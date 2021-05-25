@@ -65,6 +65,7 @@ namespace Projeto_Integrado
                 }
                 else
                 {
+                    aluno.cd_turma = null;
                     aluno.situacao_matricula = "T";
 
                     context.SaveChanges();

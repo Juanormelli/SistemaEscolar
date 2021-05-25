@@ -232,9 +232,6 @@
     <Compile Include="MenuAluno.Designer.cs">
       <DependentUpon>MenuAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="nota.cs">
-      <DependentUpon>Gestao.tt</DependentUpon>
-    </Compile>
     <Compile Include="professor.cs">
       <DependentUpon>Gestao.tt</DependentUpon>
     </Compile>

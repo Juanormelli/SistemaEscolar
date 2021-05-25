@@ -30,6 +30,5 @@ namespace Projeto_Integrado
         public virtual DbSet<responsaveis> responsaveis { get; set; }
         public virtual DbSet<turma> turma { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
-
     }
 }

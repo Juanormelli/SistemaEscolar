@@ -34,10 +34,12 @@ namespace Projeto_Integrado
             this.txtRegistro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Periodo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -48,6 +50,7 @@ namespace Projeto_Integrado
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cbPeriodo
             // 
@@ -84,12 +87,12 @@ namespace Projeto_Integrado
             this.Periodo.TabIndex = 3;
             this.Periodo.Text = "Periodo";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(34, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtNome.Location = new System.Drawing.Point(34, 159);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(236, 20);
+            this.txtNome.TabIndex = 2;
             // 
             // label2
             // 
@@ -108,6 +111,7 @@ namespace Projeto_Integrado
             this.btnAlterar.TabIndex = 4;
             this.btnAlterar.Text = "Confirmar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnVoltar
             // 
@@ -124,18 +128,41 @@ namespace Projeto_Integrado
             this.btnVoltar.TabIndex = 25;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
+            this.label3.Location = new System.Drawing.Point(97, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(288, 44);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Atualizar Dados";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(250, 275);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 27;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // AtualizarDadosProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 322);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.Periodo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtRegistro);
             this.Controls.Add(this.cbPeriodo);
             this.Controls.Add(this.btnBuscar);
@@ -153,9 +180,11 @@ namespace Projeto_Integrado
         private System.Windows.Forms.TextBox txtRegistro;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Periodo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -29,5 +29,61 @@ namespace Projeto_Integrado
             var MenuTurma = new MenuTurmas();
             MenuTurma.Show();
         }
+
+        private void BtnAdiconar_Click(object sender, EventArgs e)
+        {
+            using(var context = new gestaoescolarEntities())
+            {
+                var matricula = int.Parse(txtMatricula.Text);
+
+                var checkAlunoExist = context.aluno.Where(x => x.numero_matricula == matricula).FirstOrDefault();
+
+                if (checkAlunoExist == null)
+                {
+                    MessageBox.Show("O numero de matricula nao existe !!");
+                }
+                else
+                {
+                    var cdturma = cbCdTurma.Text;
+                    var checkTurmaExist = context.turma.Where(x => x.cd_turma == cdturma).FirstOrDefault();
+
+                    if (checkTurmaExist == null)
+                    {
+                        MessageBox.Show("A turma nao existe !!");
+                    }
+                    else
+                    {
+                        if (checkAlunoExist.cd_turma != null)
+                        {
+                            MessageBox.Show("Aluno cadastrado em outra Turma !!");
+                        }
+                        else
+                        {
+                            try
+                            {
+                                checkAlunoExist.cd_turma = cdturma;
+
+                                context.SaveChanges();
+
+                                MessageBox.Show("O Aluno foi cadastrado na turma com sucesso !!");
+
+                                var functions = new Functions();
+
+                                functions.ClearTxtBoxes(this.Controls);
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show("Ocoreu um Erro no cadastro tente novamente !!");
+                            }
+                        }
+
+                        
+
+                        
+                        
+                    } 
+                }
+            }
+        }
     }
 }

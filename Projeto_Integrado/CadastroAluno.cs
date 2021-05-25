@@ -70,70 +70,179 @@ namespace Projeto_Integrado
                 var Cpf_Pai = txtCpfPai.Text.Replace("-", "").Replace(",", "");
                 var Cpf_Mae = txtCpfMae.Text.Replace("-", "").Replace(",", "");
 
-
-              
-                var mae = new responsaveis()
+                using (var context = new gestaoescolarEntities())
                 {
-                    cpf_resposnavel = Cpf_Mae,
-                    email_responsavel = Email_Mae,
-                    nome_resposavel = Nome_Mae,
-                    telefone_responsavel = Telefone_Mae.ToString(),
 
-                };
-                var pai = new responsaveis()
-                {
-                    cpf_resposnavel = Cpf_Pai,
-                    email_responsavel = Email_Pai,
-                    nome_resposavel = Nome_Pai,
-                    telefone_responsavel = Telefone_Pai.ToString(),
-                };
-                var aluno = new aluno()
-                {
-                    nome = Nome,
-                    cpf = Cpf,
-                    email = Email,
-                    rg = Rg,
-                    dt_nascimento = Dt_Nascimento.ToString(),
-                    telefone = Telefone.ToString(),
-                    rua = Rua,
-                    numero = Numero,
-                    bairro = Bairro,
-                    cidade = Cidade,
-                    estado = Estado,
-                    situacao_matricula = "M",
-                    responsaveis = new List<responsaveis> {mae,pai}
+                    var mae = new responsaveis()
+                    {
+                        cpf_resposnavel = Cpf_Mae,
+                        email_responsavel = Email_Mae,
+                        nome_resposavel = Nome_Mae,
+                        telefone_responsavel = Telefone_Mae.ToString(),
 
-                };
-                FunctionsResp fr = new FunctionsResp();
-                FunctionsAluno fa = new FunctionsAluno();
-                var validaAluno = fa.ValidaAluno(aluno);
-                var validaMae = fr.ValidaResponsavel(mae);
-                var validaPai = fr.ValidaResponsavel(pai);
-
-                if (validaAluno  && validaMae && validaPai)
-                {
-                    
-                    
-                    fa.CadastrarAluno(aluno);
+                    };
+                    var pai = new responsaveis()
+                    {
+                        cpf_resposnavel = Cpf_Pai,
+                        email_responsavel = Email_Pai,
+                        nome_resposavel = Nome_Pai,
+                        telefone_responsavel = Telefone_Pai.ToString(),
+                    };
+                    var al = new aluno()
+                    {
+                        nome = Nome,
+                        cpf = Cpf,
+                        email = Email,
+                        rg = Rg,
+                        dt_nascimento = Dt_Nascimento.ToString(),
+                        telefone = Telefone.ToString(),
+                        rua = Rua,
+                        numero = Numero,
+                        bairro = Bairro,
+                        cidade = Cidade,
+                        estado = Estado,
+                        situacao_matricula = "M",
+                        
 
 
+                    };
 
-                    var matricula = fa.RetornarMatricula(aluno);
+                    var fr = new FunctionsResp();
+                    var fa = new FunctionsAluno();
+                    var validaAluno = fa.ValidaAluno(al);
+                    var validaMae = fr.ValidaResponsavel(mae);
+                    var validaPai = fr.ValidaResponsavel(pai);
+                    if (validaPai)
+                    {
+                        al.responsaveis = new List<responsaveis> {pai};
 
-                    
-                    MessageBox.Show("Aluno Matriculado ! O Numero de matricula do mesmo é : " + matricula);
+                        if (validaMae)
+                        {
+                            al.responsaveis.Add(mae);
+                            context.SaveChanges();
 
-                    functions.ClearTxtBoxes(this.Controls);
+                            if (validaAluno)
+                            {
+
+
+                                context.SaveChanges();
+
+
+
+                                var matricula = fa.RetornarMatricula(al);
+
+
+                                MessageBox.Show("Aluno Matriculado ! O Numero de matricula do mesmo é : " + matricula);
+
+                                functions.ClearTxtBoxes(this.Controls);
+                            }
+                            else
+                            {
+                                var matricula = fa.RetornarMatricula(al);
+                                MessageBox.Show("O Aluno já esta matriculado no numero de matricula : " + matricula);
+
+                            }
+
+
+                        }
+                        else
+                        {
+                            var respmae = context.responsaveis.Where(x => x.cpf_resposnavel == mae.cpf_resposnavel).FirstOrDefault();
+                            respmae.aluno.Add(al);
+                            context.SaveChanges();
+
+                            if (validaAluno)
+                            {
+
+
+                                context.SaveChanges();
+
+
+
+                                var matricula = fa.RetornarMatricula(al);
+
+
+                                MessageBox.Show("Aluno Matriculado ! O Numero de matricula do mesmo é : " + matricula);
+
+                                functions.ClearTxtBoxes(this.Controls);
+                            }
+                            else
+                            {
+                                var matricula = fa.RetornarMatricula(al);
+                                MessageBox.Show("O Aluno já esta matriculado no numero de matricula : " + matricula);
+
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        var respo = context.responsaveis.Where(x => x.cpf_resposnavel == pai.cpf_resposnavel).FirstOrDefault();
+
+                        respo.aluno.Add(al);
+                        context.SaveChanges();
+                        
+
+                        if (validaMae)
+                        {
+                            al.responsaveis = new List<responsaveis> { mae };
+
+                            if (validaAluno)
+                            {
+
+
+                                fa.CadastrarAluno(al);
+
+
+
+                                var matricula = fa.RetornarMatricula(al);
+
+
+                                MessageBox.Show("Aluno Matriculado ! O Numero de matricula do mesmo é : " + matricula);
+
+                                functions.ClearTxtBoxes(this.Controls);
+                            }
+                            else
+                            {
+                                var matricula = fa.RetornarMatricula(al);
+                                MessageBox.Show("O Aluno já esta matriculado no numero de matricula : " + matricula);
+
+                            }
+                        }
+                        else
+                        {
+                            var respM = context.responsaveis.Where(x => x.cpf_resposnavel == mae.cpf_resposnavel).FirstOrDefault();
+                            respM.aluno.Add(al);
+                            context.SaveChanges();                            
+
+                            if (validaAluno)
+                            {
+
+
+                                context.SaveChanges();
+
+
+                                var matricula = fa.RetornarMatricula(al);
+
+
+                                MessageBox.Show("Aluno Matriculado ! O Numero de matricula do mesmo é : " + matricula);
+
+                                functions.ClearTxtBoxes(this.Controls);
+                            }
+                            else
+                            {
+                                var matricula = fa.RetornarMatricula(al);
+                                MessageBox.Show("O Aluno já esta matriculado no numero de matricula : " + matricula);
+
+                            }
+                        }
+                        
+
+                        
+
+
+                    }
                 }
-                else
-                {
-                    var matricula = fa.RetornarMatricula(aluno);
-                    MessageBox.Show("O Aluno já esta matriculado no numero de matricula : "+ matricula);
-                    
-                }
-
-                
-
             }
             else
             {

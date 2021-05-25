@@ -31,7 +31,7 @@
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtCpfPai = new System.Windows.Forms.MaskedTextBox();
@@ -107,15 +107,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Numero de Matricula";
             // 
-            // button2
+            // btnLimpar
             // 
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(638, 789);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 91;
-            this.button2.Text = "Voltar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLimpar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLimpar.Location = new System.Drawing.Point(638, 789);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpar.TabIndex = 91;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnEditar
             // 
@@ -640,7 +641,7 @@
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscar);
@@ -658,7 +659,7 @@
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.MaskedTextBox txtCpfPai;

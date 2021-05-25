@@ -19,17 +19,41 @@ namespace Projeto_Integrado
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            using (var context = new gestaoescolarEntities())
+            var functions = new Functions();
+            var teste = functions.CheckEmptyTxtBox(this.Controls);
+            if (teste == true)
             {
-                var professor = new professor()
+                using (var context = new gestaoescolarEntities())
                 {
-                    cod_reg = int.Parse(txtRegistro.Text),
-                    nome = txtNome.Text,
-                    periodo = cbPeriodo.Text
-                };
+                    try
+                    {
+                        var professor = new professor()
+                        {
+                            cod_reg = int.Parse(txtRegistro.Text),
+                            nome = txtNome.Text,
+                            periodo = cbPeriodo.Text
+                        };
 
-                context.professor.Add(professor);
-                context.SaveChanges();
+                        context.professor.Add(professor);
+                        context.SaveChanges();
+                        MessageBox.Show("Professor Cadastrado com sucesso!");
+                        functions.ClearTxtBoxes(this.Controls);
+                    }
+                    catch(Exception ex)
+                    {
+                        
+                        var erro = MessageBox.Show(ex.Message+ ".  Deseja mostrar mais detalhes do erro ?","Erro", MessageBoxButtons.YesNo);
+                        if (erro == DialogResult.Yes)
+                        {
+                            MessageBox.Show(ex.InnerException.ToString());
+                        }
+                    }
+                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum campo pode ser vazio !");
             }
         }
 

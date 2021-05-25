@@ -92,15 +92,15 @@ namespace Projeto_Integrado
                 aluno.cidade = txtCidade.Text;
                 aluno.estado= cbEstado.Text;
                 var responsaveis = aluno.responsaveis.ToList();
-                responsaveis[0].nome_resposavel=txtNomePai.Text;
-                responsaveis[1].nome_resposavel= txtNomeMae.Text;
-                responsaveis[0].telefone_responsavel= txtTelPai.Text.Replace("-", "").Replace(",", "").Replace(" ", "");
+                responsaveis[1].nome_resposavel=txtNomePai.Text;
+                responsaveis[0].nome_resposavel= txtNomeMae.Text;
+                responsaveis[1].telefone_responsavel= txtTelPai.Text.Replace("-", "").Replace(",", "").Replace(" ", "");
 
-                responsaveis[1].telefone_responsavel = txtTelMae.Text.Replace("-", "").Replace(",", "").Replace(" ", "");
-                responsaveis[0].email_responsavel = txtEmailPai.Text;
-                responsaveis[1].email_responsavel = txtEmailMae.Text;
-                responsaveis[0].cpf_resposnavel = txtCpfPai.Text.Replace("-", "").Replace(",", "");
-                responsaveis[1].cpf_resposnavel = txtCpfMae.Text.Replace("-", "").Replace(",", "");
+                responsaveis[0].telefone_responsavel = txtTelMae.Text.Replace("-", "").Replace(",", "").Replace(" ", "");
+                responsaveis[1].email_responsavel = txtEmailPai.Text;
+                responsaveis[0].email_responsavel = txtEmailMae.Text;
+                responsaveis[1].cpf_resposnavel = txtCpfPai.Text.Replace("-", "").Replace(",", "");
+                responsaveis[0].cpf_resposnavel = txtCpfMae.Text.Replace("-", "").Replace(",", "");
 
                 context.SaveChanges();
 
@@ -118,6 +118,11 @@ namespace Projeto_Integrado
 
             
 
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
 
         }
     }

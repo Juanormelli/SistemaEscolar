@@ -17,7 +17,6 @@ namespace Projeto_Integrado
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public aluno()
         {
-            this.nota = new HashSet<nota>();
             this.responsaveis = new HashSet<responsaveis>();
         }
     
@@ -38,12 +37,6 @@ namespace Projeto_Integrado
     
         public virtual turma turma { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<nota> nota { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<responsaveis> responsaveis { get; set; }
-
-
-
-
     }
 }

@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeAlunos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.cbCdTurma = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,55 +42,31 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Numero,
-            this.NomeAlunos});
             this.dataGridView1.Location = new System.Drawing.Point(12, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(644, 290);
+            this.dataGridView1.Size = new System.Drawing.Size(318, 290);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Numero
+            // BtnBuscar
             // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // NomeAlunos
-            // 
-            this.NomeAlunos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.NomeAlunos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.NomeAlunos.HeaderText = "Nome Dos Alunos";
-            this.NomeAlunos.Name = "NomeAlunos";
-            this.NomeAlunos.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(136, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Location = new System.Drawing.Point(116, 89);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(75, 20);
+            this.BtnBuscar.TabIndex = 1;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Numero Sala";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.label1.Text = "Codigo Turma";
             // 
             // btnVoltar
             // 
@@ -111,15 +84,30 @@
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // cbCdTurma
+            // 
+            this.cbCdTurma.FormattingEnabled = true;
+            this.cbCdTurma.Items.AddRange(new object[] {
+            "1SA",
+            "1SB",
+            "2SA",
+            "2SB",
+            "3SA",
+            "3SB"});
+            this.cbCdTurma.Location = new System.Drawing.Point(17, 88);
+            this.cbCdTurma.Name = "cbCdTurma";
+            this.cbCdTurma.Size = new System.Drawing.Size(81, 21);
+            this.cbCdTurma.TabIndex = 103;
+            // 
             // VisualizacaoTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 415);
+            this.ClientSize = new System.Drawing.Size(342, 415);
+            this.Controls.Add(this.cbCdTurma);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "VisualizacaoTurmas";
             this.Text = "VisualizacaoTurmas";
@@ -134,9 +122,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeAlunos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.ComboBox cbCdTurma;
     }
 }

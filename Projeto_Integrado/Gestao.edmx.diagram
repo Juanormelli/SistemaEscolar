@@ -6,10 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="bd5b1fde3538442880abe5345d5eeb0f" Name="Diagram1">
         <EntityTypeShape EntityType="gestaoescolarModel.aluno" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="gestaoescolarModel.professor" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestaoescolarModel.professor" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="gestaoescolarModel.responsaveis" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="gestaoescolarModel.turma" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="gestaoescolarModel.usuario" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestaoescolarModel.turma" Width="1.5" PointX="0.625" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gestaoescolarModel.usuario" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="gestaoescolarModel.aluno_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="gestaoescolarModel.professor_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="gestaoescolarModel.responalunos" ManuallyRouted="false" />
